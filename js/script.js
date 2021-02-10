@@ -11,8 +11,25 @@ enlaces[0].href = 'https://www.google.com/';//modifica el href
 enlaces[0].classList.add('nueva-clase'); //crea una clase nueva
 enlaces[0].classList.remove('navegacion__enlace');//borra una clase
 
-
 // //getElementById  ---- sintaxis que ya no se utiliza es igual que querySelector
 
 // const heading2 = document.getElementById('heading');
 // console.log(heading2);
+
+//Generar un Nuevo Enlace
+
+const nuevoEnlace = document.createElement('A');
+
+//Agreagar el href
+nuevoEnlace.href = 'nuevo-enlace.html';
+
+//Agregar el texto
+nuevoEnlace.textContent = 'Tienda Virtual';
+
+//Agreagar la Clase
+nuevoEnlace.classList.add('navegacion__enlace')
+// Agregar al Documento
+const navegacion = document.querySelector('.navegacion');
+navegacion.appendChild(nuevoEnlace);
+
+console.log(nuevoEnlace);
