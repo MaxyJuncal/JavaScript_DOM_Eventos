@@ -53,6 +53,41 @@ document.addEventListener('DOMContentLoaded', function(){ //DOMContentLoaded Sol
 
 console.log(5)
 
-window.onscroll = function(){
-    console.log('scrolling...')
-}
+// window.onscroll = function(){
+//     console.log('scrolling...')
+// }
+
+
+//Seleccionar Elementos y asosiarles un Eventos
+
+const btnEnviar = document.querySelector('.boton--primario');
+ btnEnviar.addEventListener('click',function(evento){
+    console.log(evento);
+    evento.preventDefault();
+
+//Validar un formulario
+
+    console.log('Enviando Formulario');
+ })
+
+ //Eventos de los Inputs y Testarea
+
+ const datos = {
+     nombre:'',
+     email:'',
+     mensaje:''
+ }
+
+ const nombre = document.querySelector('#nombre');
+ const email = document.querySelector('#email');
+ const mensaje = document.querySelector('#mensaje');
+
+ nombre.addEventListener('input',leerTexto);
+ email.addEventListener('input',leerTexto);
+ mensaje.addEventListener('input',leerTexto);
+
+ function leerTexto(e) {
+     //console.log.target.value
+    datos[e.target.id] = e.target.value;
+    console.log(datos);
+ }
